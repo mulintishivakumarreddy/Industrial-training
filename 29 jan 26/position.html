@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position in css</title>
+</head>
+<style>
+    body{
+        /* position:relative; */
+        margin:50px;
+    }
+    .box{
+        position:relative;
+        background-color: white;
+        width:400px;
+        height:50px;
+        color:aliceblue;
+        /* align-items:center; */
+        display:flex;
+        justify-content:center;
+        border:2px solid black;
+        border-radius:30px;
+        overflow:hidden;
+        transition: width 0.4s ease;
+    }
+    .box-2{
+        position:absolute;
+        background-color: blue;
+        color:white;
+        width:50px;
+        height:50px;
+        border-radius:50%;
+        top:0;
+        right:0;
+        border :3px  rgb(138, 36, 36);
+       transform :translate(-0%,0%);
+       display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        /* transition-duration:5s; */
+        /* transform:scale(2.0) */
+    }
+    .box-2:hover{
+        transform:scale(2.0);
+        transition: 5s;
+    }
+    .image{
+        height:40px;
+        width:40px;
+        border-radius:15px;
+    }
+    .search{
+        font-size:1rem;
+        /* flex:1; */
+        border:none;
+        opacity:0;
+         transition: opacity 0.3s ease;
+         outline:none;
+         pointer-events:none;
+    }
+    .box:hover .search{
+    pointer-events:auto;
+    opacity:1;
+
+        
+
+    }
+</style>
+<body>
+    <div class="box">
+        <input type="text" placeholder="....search" class="search">
+    <div class="box-2">
+        <img src="image.png" alt="" class="image"> 
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+people.sort(function(ob1,ob2){
+    if(ob1.salary>ob2.salary){return 1}
+    else{return-1}
+})
+console.log(people)
+
+people.sort((a,b)=>a.salary-(b.salary))
+console.log(people)

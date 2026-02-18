@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin:0px;
+        text-align: center;
+    }
+    #d2{
+        display:none;
+    }
+
+    h1{
+        display:none;
+    }
+    #d2:checked ~#d1{
+        display:block;
+    }
+    label{
+        background-color: rgb(83, 74, 74);
+        padding:20px;
+        border-radius:10px;
+        color:white;
+
+       
+    }
+
+</style>
+<body>
+    <div>  
+         <input type="checkbox" id="d2">
+         <!-- <label for="d2">click this one too see</label> -->
+        <label for="d2">click here</label>
+        <h1 id="d1">
+        this is h1 element
+    </h1>
+    <h1>this is second h1</h1>
+   
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/rxjs@7.8.2/dist/bundles/rxjs.umd.min.js"></script>
+</head>
+<body>
+    <button id="b1">count:<span id="s1"></span></button>   
+</body>
+<script>
+    var counter=0;
+    rxjs.fromEvent(document.getElementById("b1"),"click")
+       .pipe(rxjs.throttleTime(5000))
+       .subscribe(function(){
+        counter++;
+        document.getElementById("s1").innerText=counter;
+        console.log("button clicked")
+       })
+</script>
+</html>

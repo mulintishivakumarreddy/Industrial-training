@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Carousel Example</title>
+
+<!-- Bootstrap 4 CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<style>
+/* FIXES */
+body {
+  padding-top: 56px; /* fixed navbar height */
+}
+
+/* Carousel full height */
+.carousel-item {
+  height: 100vh;
+}
+
+/* Background image / svg */
+.carousel-item svg,
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+}
+
+/* Featurette spacing */
+.featurette-divider {
+  margin: 5rem 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">Carousel</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+      <li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a></li>
+    </ul>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!-- CAROUSEL -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner">
+
+    <!-- SLIDE 1 -->
+    <div class="carousel-item active">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+           preserveAspectRatio="xMidYMid slice">
+        <rect width="100%" height="100%" fill="#777"></rect>
+      </svg>
+
+      <div class="container">
+        <div class="carousel-caption text-left">
+          <h1>Example headline.</h1>
+          <p>This text is now visible on top.</p>
+          <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="carousel-item">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+           preserveAspectRatio="xMidYMid slice">
+        <rect width="100%" height="100%" fill="#666"></rect>
+      </svg>
+
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Another example headline.</h1>
+          <p>Text is centered and clear.</p>
+          <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="carousel-item">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+           preserveAspectRatio="xMidYMid slice">
+        <rect width="100%" height="100%" fill="#555"></rect>
+      </svg>
+
+      <div class="container">
+        <div class="carousel-caption text-right">
+          <h1>One more for good measure.</h1>
+          <p>No text hidden anymore.</p>
+          <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<!-- MARKETING -->
+<div class="container marketing mt-5">
+
+  <div class="row text-center">
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="https://via.placeholder.com/140">
+      <h2>Heading</h2>
+      <p>Some text here.</p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div>
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="https://via.placeholder.com/140">
+      <h2>Heading</h2>
+      <p>Some text here.</p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div>
+    <div class="col-lg-4">
+      <img class="rounded-circle" src="https://via.placeholder.com/140">
+      <h2>Heading</h2>
+      <p>Some text here.</p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <!-- FEATURETTE -->
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">First featurette heading</h2>
+      <p class="lead">This is featurette text.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="img-fluid" src="https://via.placeholder.com/500">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+</div>
+
+<!-- FOOTER -->
+<footer class="container text-center mb-4">
+  <p>© 2026 Company, Inc.</p>
+</footer>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

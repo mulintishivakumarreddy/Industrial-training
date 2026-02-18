@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Layout</title>
+
+<style>
+    body{
+        margin:0;
+        padding:20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .container{
+        display:grid;
+        grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+        grid-auto-rows: 80px;
+        gap:15px;
+    }
+
+    .box{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:bold;
+        border-radius:6px;
+    }
+
+    .blue{
+        background:#eef6ff;
+    }
+
+    .red{
+        background:#fde0dc;
+        color:red;
+    }
+
+    /* heights using grid row span */
+    .helium{ grid-row: span 8; }
+    .pentium{ grid-row: span 4; }
+    .hira{ grid-row: span 4; }
+    .egy{ grid-row: span 2; }
+    .marlin{ grid-row: span 2; }
+    .rick{ grid-row: span 2; }
+    .hona{ grid-row: span 2; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="box blue helium">Helium</div>
+    <div class="box blue pentium">Pentium</div>
+    <div class="box blue egy">Egy</div>
+    <div class="box blue">Gribi</div>
+
+    <div class="box red">Eola</div>
+
+    <div class="box red marlin">Marlin</div>
+    <div class="box blue">Raven</div>
+
+    <div class="box red">Magi</div>
+
+    <div class="box red hira">Hira</div>
+    <div class="box blue rick">Rick</div>
+    <div class="box blue">Arslan</div>
+
+    <div class="box red">Dona</div>
+
+    <div class="box red hona">Hona</div>
+    <div class="box blue">Henry</div>
+
+    <div class="box red">Herta</div>
+
+</div>
+
+</body>
+</html>

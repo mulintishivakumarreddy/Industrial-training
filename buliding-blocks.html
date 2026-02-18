@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            background-color:rgba(197, 249, 86, 0.482);
+        } */
+        table,th,td{
+        text-align: center;
+        border:2px solid black;
+        border-collapse: separate;
+    }
+    th{
+        padding: 20px;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color:RED;
+        background-color: aqua;
+
+    }
+    td:nth-child(odd){
+        padding:10px;
+        background-color:lightblue;
+
+    }
+    td:nth-child(even){
+        background-color: darkgreen;
+    }
+    td:last-child{
+        background-color: mediumvioletred;
+    }
+    </style>
+    
+</head>
+<body style="background-color:lightpink;">
+
+    <table>
+        <thead>
+        <tr>
+            <th rowspan="2">name</th>
+            <th rowspan="2">pin no</th>
+            <th rowspan="2">Collage </th>
+            <th>Gender</th>
+        </tr>
+        <tr><th>Male | Female</th>
+    </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>
+                    shiva
+                </td>
+                <td>18</td>
+                <td rowspan="4">Yc James </td>
+                <td>Male</td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    john
+                </td>
+                <td>19</td>
+                <td>male</td>
+            </tr>
+            <tr>
+                <td>
+                    nil
+                </td>
+                <td>20</td>
+                <td>Female</td>
+            </tr>
+            <tr>
+                <td>
+                    hup
+                </td>
+                <td>21</td>
+                <td>Female</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

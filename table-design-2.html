@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table Layout</title>
+
+<style>
+    table{
+        width:100%;
+        border-collapse:separate;
+        border-spacing:15px;
+    }
+
+    td{
+        text-align:center;
+        vertical-align:middle;
+        padding:20px;
+        font-weight:bold;
+        border-radius:6px;
+    }
+
+    /* blue boxes */
+    .b{
+        background-color:#eef6ff;
+    }
+
+    /* red boxes */
+    .r{
+        background-color:#fde0dc;
+        color:red;
+    }
+</style>
+</head>
+
+<body>
+
+<table>
+<tbody>
+
+<tr>
+    <td class="b" rowspan="8">Helium</td>
+    <td class="b" rowspan="4">Pentium</td>
+    <td class="b" rowspan="2">Egy</td>
+    <td class="b">Gribi</td>
+</tr>
+
+<tr>
+    <td class="r">Eola</td>
+</tr>
+
+<tr>
+    <td class="r" rowspan="2">Marlin</td>
+    <td class="b">Raven</td>
+</tr>
+
+<tr>
+    <td class="r">Magi</td>
+</tr>
+
+<tr>
+    <td class="r" rowspan="4">Hira</td>
+    <td class="b" rowspan="2">Rick</td>
+    <td class="b">Arslan</td>
+</tr>
+
+<tr>
+    <td class="r">Dona</td>
+</tr>
+
+<tr>
+    <td class="r" rowspan="2">Hona</td>
+    <td class="b">Henry</td>
+</tr>
+
+<tr>
+    <td class="r">Herta</td>
+</tr>
+
+</tbody>
+</table>
+
+</body>
+</html>

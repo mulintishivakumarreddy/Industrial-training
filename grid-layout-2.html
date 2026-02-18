@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height:100dvh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:2%;
+
+        }
+        .container{
+            display:grid;
+            grid-auto-columns:100px;;
+            grid-auto-rows:1fr;
+            /* grid-template-columns:100px 100px 100px 100px 100px;
+            grid-template-rows:100px 100px 100px; */
+            gap:1em;
+            grid-template-areas:
+            "box-1 box-1 box-2 box-3 box-3"
+            "box-1 box-1 box-4 box-5 box-6"
+            "box-1 box-1 box-4 box-5 box-6"
+            /* "box-1 box-1 box-5 box-6 box-6" */
+        }
+        @media(max-width:56em){
+            .container{
+                display:grid;
+                /* grid-template-columns:100px 100px 100px;
+                grid-template-rows:100px 100px 100px; */
+                grid-template-areas:
+                "box-1 box-1 box-2"
+                "box-1 box-1 box-3"
+                "box-4 box-5 box-6";
+            }
+            
+        }
+        @media(max-width:42em){
+            .container{
+                display:grid;
+                /* grid-template-columns:100px 100px ;
+                grid-template-rows:100px 100px 100px 100px; */
+                grid-template-areas:
+                "box-1 box-2"
+                "box-3 box-2"
+                "box-4 box-4"
+                "box-5 box-6"
+            }
+        }
+        .box{
+            background-color:blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" style="grid-area:box-1"></div>
+        <div class="box" style="grid-area:box-2">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, eius eaque 
+            est voluptas minus temporibus nemo libero, facilis eligendi unde vero repudiandae saepe 
+            rerum? Cupiditate incidunt et ea quidem consequuntur.
+        </div>
+        <div class="box" style="grid-area:box-3"></div>
+        <div class="box" style="grid-area:box-4"></div>
+        <div class="box" style="grid-area:box-5"></div>
+        <div class="box" style="grid-area:box-6"></div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const employees = [ 
+ { id: 1, name: "John Doe", department: "Engineering", salary: 55000,status: "active" }, 
+ { id: 2, name: "Jane Smith", department: "Marketing", salary: 60000,status: "inactive" }, 
+ { id: 3, name: "Michael Johnson", department: "Engineering", salary:75000, status: "active" }, 
+ { id: 4, name: "Emily Davis", department: "Human Resources", salary:48000, status: "active" }, 
+ { id: 5, name: "Chris Lee", department: "Marketing", salary: 53000, status:"inactive" }, 
+ { id: 6, name: "Sarah Brown", department: "Engineering", salary: 62000,status: "active" }, 
+ { id: 7, name: "David Wilson", department: "Human Resources", salary:65000,status:"active"}, 
+ { id: 8,name: "Anna White", department: "Marketing", salary: 59000, status: "inactive" } 
+ ];
+
+function updateEmployeeStatus(empId, newStatus) {
+    let employee = employees.find(e => e.id === empId);
+
+    if (!employee) {
+        return "Employee not found";
+    }else{
+        return 'employee is found'
+    }
+
+    employee.status = newStatus;
+    return employee;
+}
+
+
+// var count=0
+// var total=0
+//  employees.forEach(e=> {
+    
+// count=employees.length
+//     total+=e.salary
+
+// })
+// console.log(total/count)
+// console.log(total/employees.length)
+//  console.log("Engineering:")
+//  employees.filter(e=> e.department==="Engineering")
+//  .forEach(e=>console.log(e.name));
+//  console.log("Marketing:")
+//  employees.filter(e=> e.department==="Marketing")
+//  .forEach(e=> console.log(e.name));
+//  console.log("Human Resources:")
+//  employees.filter(e=> e.department==="Human Resources")
+//  .forEach(e=>console.log(e.name))
+
+
+
+//  employees.forEach(p=>{
+//     if(p.status=="active")
+//     console.log(p.name)
+//  })
+//  var total=0
+//  employees.forEach(p=>{
+// if(p.id!=0)
+// total++
+//  })
+//  console.log("the total no.of employees are:",total)
+//  employees.forEach(p=>{
+//     if(p.id!=0)
+//     console.log(p.name+" "+p.department)
+//  })
+//  console.log(employees)
+ 
+
+//  console.log(employees)
+
+    </script>
+</body>
+</html>

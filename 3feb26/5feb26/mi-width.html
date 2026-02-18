@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:system-ui, sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header{
+    background:#f1f5f9;
+    border-bottom:1px solid #ccc;
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 40px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header ul{
+    display:flex;
+    gap:15px;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.header ul li{
+    cursor:pointer;
+}
+
+.header ul li:hover{
+    color:blue;
+}
+
+.header button{
+    padding:10px 16px;
+    background:#155098;
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+
+/* ===== HERO ===== */
+.hero{
+    background:#f0f5f9;
+}
+
+.hero-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 40px;
+
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.left, .right{
+    flex:1;
+    min-width:280px;
+}
+
+/* LEFT */
+.left li{
+    color:blue;
+    list-style:none;
+    margin-bottom:10px;
+}
+
+.btn1{
+    background:#332de3;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+}
+
+.btn2{
+    padding:10px;
+    border:none;
+    background:none;
+}
+
+/* RIGHT */
+.right ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    list-style:none;
+    padding:0;
+}
+
+.right ul li{
+    width:200px;
+    min-width:200px;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:16px;
+    background:white;
+    transition:0.3s;
+}
+
+.right ul li:hover{
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transform:translateY(-5px);
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet */
+@media (max-width:900px){
+    .header-inner{
+        padding:15px 25px;
+    }
+
+    .hero-inner{
+        padding:60px 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width:600px){
+    .header ul{
+        display:none;
+    }
+
+    .hero-inner{
+        padding:40px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="header-inner">
+        <h2>Orbit</h2>
+
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Portfolio</li>
+            <li>Contact</li>
+        </ul>
+
+        <button>Get Started</button>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-inner">
+
+        <div class="left">
+            <ul><li>PREMIUM DIGITAL SOLUTIONS</li></ul>
+            <h1>Crafting Exceptional Digital Experiences</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button class="btn1">Explore Services →</button>
+            <button class="btn2">Watch video</button>
+        </div>
+
+        <div class="right">
+            <ul>
+                <li><h2>150+</h2>Projects Launched</li>
+                <li><h2>98%</h2>Client Satisfaction</li>
+                <li><h2>12+</h2>Years Experience</li>
+                <li><h2>40+</h2>Team Experts</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

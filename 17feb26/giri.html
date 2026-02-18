@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="container">
+        <h2>Score: <span id="scorehead">0/0</span></h2>
+        <h4 id="scoreline"></h4>
+    </div>
+    <div>
+        <button onclick="dot()">DOT</button>
+        <button onclick="sg()">1</button>
+        <button onclick="db()">2</button>
+        <button onclick="tiple()">3</button>
+        <button onclick="boundary()">4</button>
+        <button onclick="overthrow()">5</button>
+        <button onclick="six()">6</button>
+        <button onclick="wicket()">wkt</button>
+        <button onclick="wide()">wide</button>
+        <button onclick="NOOB()">noball</button>
+    </div>
+
+    <script>
+        let totalRuns = 0;
+        let totalWickets = 0;
+        let ballsCount = 0;
+        let over = 1;
+        let overRuns = 0; 
+
+        const scoreline = document.getElementById("scoreline");
+        const scoreboard = document.getElementById("scorehead");
+
+    
+        scoreline.innerHTML = "<strong>Over " + over + ":</strong> ";
+
+        const checkOver = function (runsInThisBall) {
+            ballsCount++;
+            overRuns += runsInThisBall;
+
+            if (ballsCount % 6 === 0) {
+            scoreline.innerHTML += " <strong>(Total: " + overRuns + ")</strong>";
+                
+                ballsCount = 0;
+                 overRuns=0;
+                over += 1;
+                scoreline.innerHTML += "<br><strong>Over " + over + ":</strong> ";
+            }
+        };
+
+        const isGameOver = function () {
+            if (totalWickets >= 10) {
+                alert("All out!");
+                return true;
+            }
+            return false;
+        };
+
+        const updateBoard = function(){  (scoreboard.innerHTML = totalRuns + "/" + totalWickets);}
+        dot = () => {
+            if (isGameOver()) return;
+            scoreline.innerHTML += " . ";
+            updateBoard();
+            checkOver(0);
+        };
+
+        sg = () => {
+            if (isGameOver()) return;
+            totalRuns += 1;
+            scoreline.innerHTML += " 1 ";
+            updateBoard();
+            checkOver(1);
+        };
+
+        db = () => {
+            if (isGameOver()) return;
+            totalRuns += 2;
+            scoreline.innerHTML += " 2 ";
+            updateBoard();
+            checkOver(2);
+        };
+
+        tiple = () => {
+            if (isGameOver()) return;
+            totalRuns += 3;
+            scoreline.innerHTML += " 3 ";
+            updateBoard();
+            checkOver(3);
+        };
+
+        boundary = () => {
+            if (isGameOver()) return;
+            totalRuns += 4;
+            scoreline.innerHTML += " 4 ";
+            updateBoard();
+            checkOver(4);
+        };
+
+        six = () => {
+            if (isGameOver()) return;
+            totalRuns += 6;
+            scoreline.innerHTML += " 6 ";
+            updateBoard();
+            checkOver(6);
+        };
+
+        wicket = () => {
+            if (isGameOver()) return;
+            totalWickets++;
+            scoreline.innerHTML += " wkt ";
+            updateBoard();
+            checkOver(0);
+        };
+        wide = () => {
+            if (isGameOver()) return;
+            totalRuns += 1;
+            overRuns += 1; 
+            scoreline.innerHTML += " 1wd ";
+            updateBoard();
+        };
+
+        NOOB = () => {
+            if (isGameOver()) return;
+            totalRuns += 1;
+            overRuns += 1;
+            scoreline.innerHTML += " 1nb ";
+            updateBoard();
+        };
+
+        overthrow = () => {
+            if (isGameOver()) return;
+            totalRuns += 5;
+            scoreline.innerHTML += " 5 ";
+            updateBoard();
+            checkOver(5);
+        };
+
+    </script>
+</body>
+    
+</html>

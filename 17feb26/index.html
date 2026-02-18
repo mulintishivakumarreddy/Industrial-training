@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cricket Scoring App</title>
+
+<style>
+*{margin:0;box-sizing:border-box}
+body{height:100vh;overflow:hidden;font-family:Arial,sans-serif}
+
+.top-container{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:1100px;
+background:#e6e5e4;
+padding:15px;
+border-radius:20px;
+z-index:1000
+}
+
+.screen{
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.players{width:300px}
+
+.scorecard{
+width:140px;
+background:#204dac;
+color:#fff;
+padding:20px;
+border-radius:15px;
+text-align:center
+}
+
+.displayover{
+width:260px;
+height:50px;
+background:brown;
+color:#fff;
+padding:15px;
+border-radius:15px;
+white-space:nowrap;
+overflow-x:auto;
+overflow-y:hidden
+}
+
+.ball{
+display:inline-block;
+margin-right:10px
+}
+
+.over-sep{
+margin:0 12px;
+font-weight:bold
+}
+
+.bowling{
+margin-top:15px;
+display:flex;
+justify-content:center;
+gap:10px
+}
+
+.btn{
+width:55px;
+height:45px;
+font-weight:bold
+}
+
+#completedovers{
+position:absolute;
+top:220px;
+bottom:20px;
+left:20px;
+right:20px;
+overflow-y:auto;
+font-weight:bold;
+line-height:1.6
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-container">
+
+<div class="screen">
+<div class="players">
+<h3 id="playerA"></h3>
+<h3 id="playerB"></h3>
+</div>
+
+<div class="scorecard">
+<h2><span id="score">0</span>/<span id="wickets">0</span></h2>
+</div>
+
+<div class="displayover">
+<strong id="overheading"></strong>
+<span id="runsinover"></span>
+</div>
+</div>
+
+<div class="bowling">
+<button class="btn" onclick="dot()">.</button>
+<button class="btn" onclick="single()">1</button>
+<button class="btn" onclick="double()">2</button>
+<button class="btn" onclick="three()">3</button>
+<button class="btn" onclick="four()">4</button>
+<button class="btn" onclick="five()">5</button>
+<button class="btn" onclick="six()">6</button>
+<button class="btn" onclick="wide()">Wd</button>
+<button class="btn" onclick="noball()">Nb</button>
+<button class="btn" onclick="wicket()">W</button>
+</div>
+
+</div>
+
+<div id="completedovers"></div>
+
+<script>
+let runs=0,wickets=0,overs=0,ballInOver=0
+let players=Array.from({length:11},()=>({runs:0,balls:0}))
+let striker=0,nonStriker=1,nextBatsman=2
+let strikerSide="A"
+
+const scoreEl=document.getElementById("score")
+const wicketsEl=document.getElementById("wickets")
+const overLine=document.getElementById("runsinover")
+const overHead=document.getElementById("overheading")
+const completed=document.getElementById("completedovers")
+const playerA=document.getElementById("playerA")
+const playerB=document.getElementById("playerB")
+
+function updateUI(){
+if(strikerSide==="A"){
+playerA.innerText=`Batsman A*: ${players[striker].runs} (${players[striker].balls})`
+playerB.innerText=`Batsman B: ${players[nonStriker].runs} (${players[nonStriker].balls})`
+}else{
+playerA.innerText=`Batsman A: ${players[nonStriker].runs} (${players[nonStriker].balls})`
+playerB.innerText=`Batsman B*: ${players[striker].runs} (${players[striker].balls})`
+}
+scoreEl.innerText=runs
+wicketsEl.innerText=wickets
+overHead.innerText=`Over ${overs+1}: `
+}
+
+function swapStrike(){
+[striker,nonStriker]=[nonStriker,striker]
+strikerSide=strikerSide==="A"?"B":"A"
+}
+
+function addBall(symbol,run=0,legal=true,creditBatsman=true){
+overLine.innerHTML+=`<span class="ball">${symbol}</span>`
+runs+=run
+if(creditBatsman) players[striker].runs+=run
+if(legal){
+ballInOver++
+players[striker].balls++
+}
+if(run%2===1 && creditBatsman) swapStrike()
+if(ballInOver===6){
+const overHTML=`Over ${overs+1}: ${overLine.innerHTML}<span class="over-sep">|</span><br>`
+completed.innerHTML+=overHTML
+overLine.innerHTML=""
+ballInOver=0
+overs++
+swapStrike()
+}
+updateUI()
+}
+
+function dot(){addBall(".")}
+function single(){addBall("1",1,true,true)}
+function double(){addBall("2",2,true,true)}
+function three(){addBall("3",3,true,true)}
+function four(){addBall("4",4,true,true)}
+function five(){addBall("5",5,true,true)}
+function six(){addBall("6",6,true,true)}
+
+function wide(){addBall("Wd",1,false,false)}
+
+function noball(){
+overLine.innerHTML+=`<span class="ball">Nb</span>`
+runs++
+updateUI()
+}
+
+function wicket(){
+addBall("W",0,true,false)
+wickets++
+striker=nextBatsman++
+updateUI()
+if(wickets===10){
+alert("Match Over")
+document.querySelectorAll("button").forEach(b=>b.disabled=true)
+}
+}
+
+updateUI()
+</script>
+
+</body>
+</html>

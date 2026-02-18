@@ -1,0 +1,101 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 >Score:
+            <span id="runs" > 0</span>/<span id="wickets">0</span></h1>
+        <div>
+            <h4>Overs<span id="overcount"></span> :<p id="overline"></p></h4>
+        </div>
+        <div >
+            <button onclick="dot()">Dot</button>
+            <button onclick="single()">1</button>
+            <button onclick="double()">2</button>
+            <button onclick="three()">3</button>
+            <button onclick="four()">4</button>
+            <button onclick="five()">5</button>
+            <button onclick="six()">6</button>
+            <button onclick="wide()">Wide</button>
+            <button onclick="wicket()">Wicket</button>
+        </div>
+        <script>
+            let runs=0;
+            let wickets=0;
+            let overs=0;
+            let overscount=document.getElementById("overcount")
+            let runscount=document.getElementById("runs")
+            let wicketscount=document.getElementById("wickets")
+            let overline=document.getElementById("overline")
+
+        function dot() {
+            runs+=0;
+            runscount.innerText=runs
+            addBall(".");
+        }
+        function single() {
+            runs+=1;
+            runscount.innerText=runs
+            addBall("1");
+        }
+            function double() {
+            addBall("2");
+        runs+=2;
+            runscount.innerText=runs
+        }
+            function three() {
+            addBall("3");
+            runs+=3;
+            runscount.innerText=runs
+        }
+        function four() {
+            addBall("4");
+            runs+=4;
+            runscount.innerText=runs
+        }
+        function five() {
+            addBall("5");
+            runs+=5;
+            runscount.innerText=runs
+        }
+        function six() {
+            addBall("6");
+            runs+=6;
+            runscount.innerText=runs
+        }
+        function wide() {
+            overline.innerText+="1wd"
+            runs+=1;
+            runscount.innerText=runs
+        }
+        function wicket() {
+             addBall("W");
+            wickets+=1;
+            wicketscount.innerText=wickets
+            if(wickets==10){
+                alert("match over");
+               disableButtons()
+                }
+        }
+        function addBall(symbol){
+            overline.innerText+=' '+symbol
+            // ballcount++;
+            if(ballcount%6==0){
+            overline.innerText+="|" ;
+            overs+=1;
+            overscount.innerText+=overs;
+                }
+            }
+            function disableButtons() {   
+        document.querySelectorAll("button").forEach(btn => {
+            btn.disabled = true;
+        });
+    }
+
+        
+        </script>
+    </body>
+    </html>

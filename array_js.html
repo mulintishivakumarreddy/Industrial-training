@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     var ar=[
+    //         a=1,b=2,c=56]  
+    //         console.log(ar);
+    //     // var br=a.at(-2) 
+    //     // console.log(br)
+    //     console.log(ar.length);
+    //     var br=ar[2];
+    //     console.log(br);
+    //    // console.log(ar.reverse());
+    //    ar.splice(4, 0,"shiva","kumar","reddy");
+    //     console.log(ar);
+    //     const cr=ar;
+    //     cr.splice(3,3,"shiva7");
+    //     console.log(cr);
+    // console.log("ar");
+    
+    // var num=[1,2,3,4,5]
+    // console.log(num);
+    // var num2= Array.from(num, x=>x*x);
+    // console.log(num2);
+    // var num3=num.map(x=>x**3);
+    // // console.log(num3);
+
+    // var name= Array.from("shiva kumar reddy ");
+    // console.log(name);
+    // console.log(Array.from("foo"));
+
+// var name=[10,20,30,40];
+// name.push="50";
+// console.log(name);
+//console.log(Object.values(name));
+ 
+//  var name = [10,20,30];
+// name[3] = "40";
+
+// console.log(name[3]);        // "40"
+// console.log(name.length);    // 4
+// console.log(Object.values(name));
+// var name = "10";
+// name[2] = "40";
+
+// console.log(name);
+// console.log(Object.values(name));
+// const colors = ["red", "yellow", "blue"];
+// colors[5] = "purple";
+// const iterator = colors.keys();
+// for (const key of iterator) {
+//   console.log(`${key}: ${colors[key]}`);
+// }
+// const newColors = colors.toReversed(); 
+// console.log(newColors);
+// let str="shiva kumar reddy"
+// let arr=Array.from(str)
+// console.log(str)
+// console.log(arr)
+
+// let a=[1,2,3]
+// let b=a.map(x=>x*10)
+// console.log(b)
+
+// async function* gen() {
+//   yield 4;
+//   yield 5;
+// }
+
+// (async () => {
+//   let arr = await Array.fromAsync(gen(), x => x * x);
+//   console.log(arr);
+// })();
+
+// console.log(Array.isArray([1,2,3]));
+
+      // console.log(Array.of(7,5,6,"shiva"));
+
+      // var arr=["mango","apple","grape","papaya"]
+      // console.log(arr)
+      // // // console.log(arr.at(-2))
+      // // var brr={1:"coffee",2:"tea"}
+      // // var crr=arr.concat(Object.values(brr));
+      // // console.log(crr)
+      // // console.log(([1,2]).concat([3,4]))
+      // console.log(arr.push("guava","pineapple"))
+      // console.log(arr)
+
+//          const array=[1,2,3,4,5,6]
+//       // //   // console.log(array.fill(0,1,2))
+//       // //   let result=array.filter((element) => element>3);
+//       // // console.log(result)
+//       // let largenumber=(element)=>element>3;
+//       // console.log(array.findIndex(largenumber))
+// console.log(array.slice(2,4))
+// console.log(array)
+
+// let arr=[23,35,54,0,4,7,34,65,99]
+// var brr=arr;
+// for( let i=0;i<4;i++) {
+// console.log(arr[i])
+
+//  }
+//  let sorted=[...arr].sort((a,b) => a-b)
+//  console.log(sorted)
+// //  console.log(arr.sort())
+// console.log("  ")
+//  for( let j = 0;j<brr.length;j++){
+//     if(brr[j]%2!=0)
+//     console.log(brr[j])
+
+
+//  }
+
+// var arr=[1,2,3,4,5,6,7]
+// var min=arr[5]
+// var max=arr[0]
+// // console.log(min)
+// for(let i=0;i<=arr.length;i++){
+//     // console.log(arr[i])
+//     if(arr[i]<min)
+//     min=arr[i]
+// }
+//     console.log("min is:",min)
+
+// var brr=[11,12,13,14,15,16]
+// for(j=0;j<=brr.length;j++){
+//     if(brr[j]>max){
+    
+//     max=brr[j];
+//     }
+// }
+// console.log("max is:",max)
+
+var a =[1,2,3,4,1,2,3,4,6,7,8,9,6,7,8,1,2,3,4,5]
+var freq={};
+a.forEach(x =>freq[x] = (freq[x]||0)+1);
+a.sort((x,y)=>freq[x]-freq[y] || x-y);
+
+console.log(a)
+
+// let b = [12,10,11,56,37,98,23];
+// let res=[b[0]];
+// for(let i=1;i<b.length;i++){
+//   if(b[i]>res[res.length-1]) res.push(b[i]);
+// }
+// console.log(res);
+
+// [12,34,56,98]
+
+// var odds=[]
+// var n=1;
+// while(odds.length<10){
+//     odds.push(n)
+//     n+=2;
+    
+
+// }
+
+// var arr=[1,2,3,4,5,6,7,8]
+// for(j=arr.length/2;j<arr.length;j++){
+// console.log(arr[j]);
+// }
+// //console.log(arr[j])
+// console.log(odds)
+
+    
+// // var arr=[10,15,20,25,30,35,40,45,50]
+// var arr=[]
+// for(i=0;i<=50;i++){
+//     if(i%2==1)
+//     arr=+i
+//     if(arr[i].length<10)
+    
+    // if(arr[i]%2==0 || arr[i]%3==0)
+//    console.log(i)
+    // console.log(arr)
+
+    // var brr=arr[i]
+// console.log(arr)
+// }
+// console.log(arr)
+
+
+// console.log(arr[i]*0.75)
+// var duplicateArray=Array.from(arr)
+// console.log(duplicateArray)
+// let unique=[...new Set(arr)];
+// console.log(unique)
+
+// console.log(arr.indexOf(13))
+// var count=0
+//  for(i=0;i<arr.length;i++){
+//     if(11==arr[i])
+//     count++
+//  }
+//  console.log(count)
+
+
+//     if(arr[i]==10)
+//     console.log(arr[i])
+// else
+// console.log("not present")
+ 
+//  count+=arr[i]
+ 
+// }
+// console.log(count/arr.length)
+
+
+ </script>
+</body>
+</html>

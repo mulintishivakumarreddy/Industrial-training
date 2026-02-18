@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+        }
+        #d1{
+            background-color:lightgoldenrodyellow;
+            display:flex;
+            width:100%;
+            justify-content:space-between;
+            align-items: center;
+            position:relative;
+            
+        }
+        #d2{
+    display:none;
+}
+
+#d3{
+    display:none;
+    margin-left:auto;
+    font-size:28px;
+    cursor:pointer;
+}
+#menu-items{
+    display:flex;
+    list-style:none;
+    gap:20px;
+    padding:20px;
+    align-items:center;
+}
+
+        
+        @media screen and (max-width:600px){
+         #menu-items{
+        position:absolute;
+        top:50px;
+        right:0;
+        background-color: bisque;
+        flex-direction:column;
+        width:200px;
+        max-height:0;
+        opacity:0;
+        overflow:hidden;
+        pointer-events:none;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+
+            #d3{
+                display:block;
+                margin-left:auto;
+                
+            }
+            #d2:checked~#menu-items{
+                max-height:500px;
+                opacity:1;
+                pointer-events:auto;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <h1>Hello</h1>
+        <input type="checkbox" id="d2">
+        <label for="d2" id="d3">&#9776;
+        </label>
+        <ul id="menu-items">
+            <li>Home</li>
+            <li>Contact us</li>
+            <li>Help</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

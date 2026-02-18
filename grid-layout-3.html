@@ -1,0 +1,138 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:grey;
+            display:grid;
+        }
+            /* height:500px;
+            width:500px; */
+            
+            /* grid-template-columns:1fr 1fr 1fr;
+            grid-template-rows:1fr 1fr 1fr; */
+        /* }
+        .child-1{
+            background-color:blue;
+            color:white;
+            grid-column:1/3;
+            grid-row:3/4;
+            opacity:0.5;
+        
+        }
+        .child-2{
+            background-color:lightgreen;
+            grid-column:2/6;
+            grid-row:1/2;
+        } */
+         .wraper{
+            width:30em;
+            display:grid;
+            border-radius:1em;
+            justify-content:center;
+            align-items:center;
+
+         }
+        .image{
+            display:block;
+            position:relative;
+            width:500px;
+            object-fit:cover;
+            border-radius:16px;
+            grid-row:1/2;
+            grid-column:1/2
+        }
+        .text{
+            width:500px;
+            position:absolute;
+            opacity:0.5;
+            display:grid;
+            background-color:rgb(18, 18, 47);
+            color:white;
+            grid-row:1/2;
+            grid-column:1/2
+            
+        }
+    </style>
+</head>
+<body>
+
+     <div class="child-1">child-1</div>
+    <div class="child-2">child-2</div> -->
+<!-- <div class="wraper">
+    <img class="image" src="light-bulb-503881_640.jpg">
+    <div class="text" >
+    <h1>HELLO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet veritatis necessitatibus reprehenderit nemo repellat architecto. Facere, excepturi officia esse voluptatum fugiat cumque labore. Ex iusto, quae dolor culpa odit nemo?</p>
+    </div>
+    </div>
+</body>
+</html>  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Text Overlay</title>
+
+<style>
+body{
+    background: grey;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.wrapper{
+    width: 30em;
+    display: grid;
+    border-radius: 1em;
+    overflow: hidden; 
+    place-items:center;
+}
+
+/* image */
+.img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    
+}
+
+/* text card */
+.text{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-self: end;   /* pushes text to bottom */
+    background: rgba(18, 18, 47, 0.5);
+    color: white;
+    padding: 2em;
+    border-radius: 1em 1em 0 0;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <img src="light-bulb-503881_640.jpg" alt="image" class="img">
+
+    <div class="text">
+        <h1>Hello World</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Expedita nam libero dolorem obcaecati.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

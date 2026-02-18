@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image with Text Overlay</title>
+
+<style>
+    body{
+        background-color:#eee;
+        padding:40px;
+        font-family: Arial, sans-serif;
+    }
+
+    .box{
+        width:400px;
+        height:400px;
+        background-image:url("https://picsum.photos/600/400");
+        background-size:cover;        /* image fit */
+        background-position:center;   /* center image */
+        position:relative;             /* IMPORTANT */
+        border-radius:200px;
+        overflow:hidden;
+    }
+
+    .text{
+        position:absolute;
+        bottom:0;
+        width:100%;
+        padding:15px;
+        background-color:rgba(0,0,0,0.9); /* opacity ONLY for text bg */
+        color:white;
+        text-align:center;
+        font-size:22px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <div class="text">
+        Naa Text Image Meeda
+    </div>
+</div>
+
+</body>
+</html>

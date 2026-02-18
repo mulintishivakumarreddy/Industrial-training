@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+    //     const products = [
+    //         { title: "Wireless Headphones", price: 129.99, discount: 15, category: "Electronics" },
+    //         { title: "Hardcover Notebook", price: 19.5, discount: 5, category: "Sports" },
+    //         { title: "Cotton T-Shirt", price: 25.0, discount: 10, category: "Clothing" },
+    //         { title: "Ceramic Mug Set", price: 34.75, discount: 20, category: "Home" },
+    //         { title: "Yoga Mat", price: 45.0, discount: 12, category: "Sports" },
+    //         { title: "Fitness Tracker", price: 89.99, discount: 10, category: "Electronics" },
+    //         { title: "Running Shoes", price: 120.0, discount: 25, category: "Clothing" },
+    //         { title: "Bluetooth Speaker", price: 59.99, discount: 18, category: "Electronics" },
+    //         { title: "Stainless Steel Water Bottle", price: 29.95, discount: 5, category: "Home" },
+    //         { title: "LED Desk Lamp", price: 39.5, discount: 15, category: "Home" },
+    //         { title: "Organic Face Cream", price: 24.99, discount: 8, category: "Beauty" },
+    //         { title: "Children's Puzzle Toy", price: 14.5, discount: 20, category: "Toys" },
+    //         { title: "Hardcover Cookbook", price: 27.0, discount: 10, category: "Books" },
+    //         { title: "Camping Hammock", price: 49.99, discount: 30, category: "Outdoors" }
+    //     ];
+
+    //     var x = products.filter(function (p) {
+    //         if (p.category == "Electronics") {
+    //     return true
+    //     }
+    // })
+    //     var x=x.map(function(p){
+    //         p.price=p.price-p.price*0.75
+    //         console.log(p)
+
+    //     })
+         
+        // if (x) {
+        //     console.log('yes its there', x.title);
+        // }
+        // else {
+        //     console.log('not there');
+        // }
+        var people = [
+            {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+            },
+            {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+            },
+            {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+            },
+            {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+            },
+            {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+            },
+            {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+            }
+        ];
+        people.sort((a,b)=>a.lastname.localeCompare(b.lastname))
+        people.forEach(p=>
+            console.log(p.firstname+" "+p.lastname)
+        )
+        // people.forEach(p=>{
+        //     p.role =" lead engineer"
+        //     // console.log(people)
+    
+        // }
+        // )
+        // console.log(people)
+    //     people.forEach(p=>{
+    //         if(p.lastname.includes("a"))
+    //         console.log(p.lastname)
+    //   }  )
+        // people.forEach(p=>{
+        //     // console.log(p.salary)
+        //     p.salary=p.salary*1.15
+        //     console.log(p.salary)
+        // }
+        // )
+        // people.filter(p=>p.gender==="male")
+        // people.sort((a,b)=>b.firstname.localeCompare(a.firstname))
+        // people.forEach(p=>{
+        //     if(p.gender==="female"){
+        //     console.log(p.firstname+" "+p.lastname)
+        //     }
+        // })
+// people.forEach(p=>{
+//     if(p.firstname!=0){
+//    p.firstname=p.firstname[0].toUpperCase()+p.firstname.slice(1)
+//     }
+//     console.log(p.firstname+" "+p.lastname)
+//     }
+// )
+// console.log(people.firstname)
+
+        // let cities=[]
+        // people.forEach(p=>{
+        //     if(!cities.includes(p.city)){
+        //      cities.push(p.city)
+        //     }
+        // })
+        // console.log(cities)
+//         let males=[]
+//         let females=[]
+//         people.forEach(p=>{
+//             if(p.gender==="male"){
+//                 males.push(p.firstname+" "+p.lastname)
+//                 // console.log(males)
+//             }
+            
+//             else{
+//                 females.push(p.firstname+" "+p.lastname)
+//             }
+
+//         })
+// console.log(males)
+// console.log(females)
+        //     people.sort((a,b)=>a.salary-b.salary)
+        // people.forEach(p=>{
+        // console.log(p.firstname+" "+p.lastname+ " "+p.salary)
+        // console.log(people.firstnmae+" "+" "+p.lastname)
+            
+    //    } )
+        // let av=0
+        // people.forEach(p=>{
+        //     // if(p.age!=0)
+        //     av+=p.age
+        //     console.log(p.age +" , "+av)
+        // })
+
+        // people.forEach(p=>{
+            // let fname=people.firstname
+        //     people.forEach(p=>{
+        //         if(p.firstname.startsWith("p")) 
+             
+        // console.log((p.firstname).toUpperCase()+" "+p.lastname)})
+        //     if( p.firstname.startsWith("P"))
+        //     //    pname.toupperCase()
+        //        {
+        //          console.log(p.firstname+" "+p.lastname)
+        //        }
+        // })
+    
+            // people.sort((a,b) => a.age-b.age)
+            // people.forEach(p=>{
+            
+            //     if(p.gender==="male" && p.age>=25)
+            //     console.log(p.firstname+" "+p.lastname)
+            //   } )  
+
+
+        // let unique=[]
+        // people.forEach(p=>{
+        //     if(!unique.includes(p.city)){
+        //         unique.push(p.city)
+        //     }
+        // })
+        // console.log(unique)
+
+        // people.map(people=>people.city)
+        // people.forEach(people=>{
+        //     console.log(people.city)
+        // }
+        // )
+    
+        
+// people.sort((a,b)=>b.salary-a.salary)
+// people.forEach(people=>
+//     console.log(people.salary)
+// )
+
+        //     people.sort((a,b)=>b.age-a.age)
+        //     people.forEach(people=>{
+        //     console.log(people.firstname+" "+people.lastname)
+        // })
+        // people.sort((a,b)=>b.firstname.localeCompare(a.firstname))
+        // people.forEach(people=>{
+        //     console.log(people.firstname+" "+people.lastname)
+        // })
+        // sortedpeople=[]
+        // people.forEach(people=>{
+        //     sortedpeople=(people.firstname).sort()
+            // if(people.salary>=20000)
+            // if(people.gender=="female")
+            // console.log(people.firstname+" "+people.lastname)
+        //     console.log(people.firstname)
+        // })
+    
+        // var entername=prompt("enter the city:")
+//         var total=0
+//   people.forEach(people =>{
+//     total+=people.salary
+//     console.log(total)
+    // if(entername === people.city)
+    // console.log(people.firstname+" "+people.lastname)
+//   })
+
+        // var filteredPeople = people.filter(function (person) {
+        //     if (person.salary > 25000) {
+        //         return true
+        //     }
+        // })
+        // filteredPeople = filteredPeople.map(function (a) {
+        //     a.salary = a.salary + (a.salary * 0.15)
+        //     return a
+        // })
+        // console.log(filteredPeople);
+
+        // var students = [
+        //     {
+        //         fullname: "Uday",
+        //         age: 18,
+        //         likes: "cricket"
+        //     },
+        //     {
+        //         fullname: "Praveen",
+        //         age: 15,
+        //         likes: "deepika padukone"
+        //     },
+        //     {
+        //         fullname: "Chitra",
+        //         age: 17,
+        //         likes: "Biryani"
+        //     },
+        //     {
+        //         fullname: "Susmitha",
+        //         age: 19,
+        //         likes: "Reading Books"
+        //     }
+        // ]
+        // students = students.map(function (std) {
+        //     if (std.age >= 18) {
+        //         std.minor = false
+        //     }
+        //     else {
+        //         std.minor = true
+        //     }
+        //     // std.company = 'Thoughtworks'
+        //     // std.fullname = std.fullname.toUpperCase();
+        //     return std
+        // })
+        // console.log(students);
+    </script>
+</body>
+
+</html>
