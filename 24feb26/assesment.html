@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        #products{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border:2px solid black;
+            /* gap:0px 10px ; */
+        }
+        .card{
+            height:400px;
+            width:300px;
+            /* padding:5px 0px; */
+           background-color: white;
+            text-align: center;
+            border-radius:20px;
+            margin-top:10px;
+            margin-left:10px;
+
+        }
+        .card1{
+            height:60%;
+            width:75%;
+            position:fixed;
+            top:100px;
+            left:100px;
+            background-color: aliceblue;
+            padding:20px;
+            border:5px solid black;
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="products"></div>
+    <div id="display"></div>
+    <button onclick="btnclick()">X</button>
+    <script>
+        fetch(" https://dummyjson.com/products")
+        .then(response => response.json())
+        // .then(data=>console.log(data))
+        .then(data =>{
+            let products=document.getElementById("products")
+            data.products.forEach(product=>{
+                let card=document.createElement("div")
+                card.className="card"
+                let pimg=document.createElement("img")
+                pimg.src=product.thumbnail;
+                let pname=document.createElement("h3")
+                pname.innerText=product.title;
+                card.appendChild(pimg)
+                card.appendChild(pname)
+                products.appendChild(card)
+
+                let sc=document.getElementById("display")
+                card.addEventListener("click",()=> {
+                let singlecard = document.createElement("div");
+                singlecard.className = "card1";
+                let pimg=document.createElement("img")
+                pimg.src=product.thumbnail;
+                let pname=document.createElement("h3")
+                pname.innerText=product.title;
+                 let singledescription = document.createElement("p");
+                 singledescription.innerText = product.description;
+
+                // singlecard.appendChild(singletitle);
+                // let btn=document.createElement("button")
+                // btn.className=xbtn;
+                // btn.innertext= X;
+                // btn.addEventListener("click",()=>{
+                // sc.style.display=none;
+                // })
+                singlecard.appendChild(singledescription);
+                singlecard.appendChild(pimg)
+                singlecard.appendChild(pname)
+                // singlecard.appendChild(xbtn)
+                sc.appendChild(singlecard)
+                btnclick()=
+                    sc.style.display.none
+            })
+            }) 
+        })
+    .catch(error => console.log(error));
+</script>
+     
+        
+</body>
+</html>
+    <!-- //take each product
+//display image and name
+//implement onclick()method to display name, discription and name of the product
+
+                
+// singlecard.appendC  // let btn=document.createElement("button")
+                // btn.innertext= X;
+                // btn.addEventListener("click",()=>{
+                //     sc.display=none;
+                // })
+               hild(button)
+                // sc.appendChild(singlecard)

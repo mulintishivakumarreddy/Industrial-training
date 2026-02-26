@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  
+</style>
+<body>
+    <table id="table" border="1">
+         
+            <thead>
+            <td>Id</td>  
+            <td>Recipe </td>
+            <td>calories </td>
+            <td>Cooking Time </td>
+            <td>Rating</td>
+            </thead>
+            
+        <tbody id="tbody">
+
+        </tbody>
+        
+    </table>
+    <script>
+       
+        fetch("https://dummyjson.com/recipes")
+        .then(response=>(response.json()))
+        // .then(data=>(console.log(data)))
+        .then(data=>{
+        var table= document.getElementById("table");
+        var tbody=document.getElementById("tbody")
+        data.recipes.forEach(recipe=>{
+        var newrow=document.createElement("tr")
+        var rid=document.createElement("td")
+        rid.innerText=recipe.id;
+         var name=document.createElement("td")
+         name.innerText=recipe.name;
+         var price=document.createElement("td")
+         price.innerText=recipe.price;
+         var calories=document.createElement("td")
+         calories.innerText=recipe.caloriesPerServing;
+         var CookingTime=document.createElement("td")
+         CookingTime.innerText=recipe.cookTimeMinutes;
+        var rating=document.createElement("td")
+         rating.innerText=recipe.rating;
+            newrow.appendChild(rid)
+            newrow.appendChild(name)
+            newrow.appendChild(calories)
+            newrow.appendChild(CookingTime)
+            newrow.appendChild(rating)
+            tbody.appendChild(newrow)
+            })
+         })
+       
+    </script>
+    
+
+    
+</body>
+</html>

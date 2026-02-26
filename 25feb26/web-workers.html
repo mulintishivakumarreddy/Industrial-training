@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-worker</title>
+    <script src="help-worker.js">
+    </script>
+</head>
+<body>
+    <script>
+        // console.log("firstline")
+        // function series(){
+        // var worker=new Worker("help-worker.js")
+        // worker.postMessage(0)
+        // let p=new Promise((resolve,reject)=>{
+        //    worker.onmessage=(y)=>{
+        //     resolve(y.data)
+            
+        //     //  console.log("y:",y.data)   
+        //     }
+        //     })
+        //      return p;
+        // }
+        // series().then(res=>{
+        //     console.log("after promise",res)
+        // })
+        // console.log("lastline")
+        console.log("firstline")
+        function series(fn){
+        var worker=new Worker("help-worker.js")
+        worker.postMessage(0)
+           worker.onmessage=(y)=>{
+            fn(y.data)
+            }  
+        }
+        series(function(res){
+            console.log("After callback:",res)
+        })
+        console.log("lastline")
+    </script>
+</body>
+</html>

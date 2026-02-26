@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <style>
+        #list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+            background: #f2f2f2;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>To do List</h2>
+
+    <input type="text" id="d1">
+    <button onclick="add()">ADD</button>
+
+    <div id="list"></div>
+
+    <script>
+        var addlist=document.getElementById("d1")
+
+        function add(){
+            if(addlist.value===""){
+            alert("enter something")
+            return;
+            }
+      
+        var list=document.getElementById("list")
+
+        var item=document.createElement("div")
+        item.className="item";
+
+        var text=document.createElement('span')
+        text.innerText=addlist.value;
+
+        var btndel=document.createElement("button")
+        btndel.innerText="delete";
+
+        btndel.onclick=function(){
+            item.remove()
+        }
+
+        item.appendChild(text)
+        item.appendChild(btndel)
+        list.appendChild(item)
+        addlist.value=""
+        }
+
+
+    </script>
+</body>
+</html>

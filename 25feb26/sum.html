@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="maid-workers.js"></script>
+</head>
+<body>
+    <script>
+        // let sum=0;
+        // for(var i=0;i<=10;i++){
+        //     sum+=i;
+        // }
+        //   console.log("firstline")
+         
+        // function series(){
+        //     var maidworker=new Worker("maid-workers.js")
+        //     maidworker.postMessage(0)
+        //     return new Promise((resolve,reject)=>{
+        //         maidworker.onmessage=(y)=>{
+        //             resolve(y.data)
+        //         console.log("y:",y.data)
+        //     }
+        //     })
+        // }
+        // series().then(function (res){
+        //     console.log("sum :",res)
+        // })
+        // console.log("lastline")
+         console.log("firstline")
+         
+        function series(fn){
+            var maidworker=new Worker("maid-workers.js")
+            maidworker.postMessage(0)
+                maidworker.onmessage=(y)=>{
+                console.log("y:",y.data)
+                fn(y.data)
+            }
+            
+        }
+        series((res)=>{
+            console.log("callback result:",res)
+        })
+        console.log("lastline")
+    </script>
+</body>
+</html>

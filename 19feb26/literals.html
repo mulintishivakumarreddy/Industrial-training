@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var y=prompt();
+        // var a=`hi ${y},How are you! `
+        // console.log(a)
+        //  var x=+prompt();
+        //  var y=+prompt();
+        //  console.log("Addition of and "+x + " and " +y+" is" + (x+y));
+        //  console.log(`addition of ${x} and ${y} is:${x+y}`)
+
+        // var firstname="shiva";
+        // var lastname="reddy"
+        // var mykey=prompt();
+
+        // var obj1={
+        //     firstname,
+        //     lastname,
+        //     // `key: ${mykey}`
+
+        //     mykey, 
+        //     [mykey]:"edookkati"
+        // }
+        // console.log(obj1)
+
+    //     var x=prompt();
+    //     var y=Number(prompt());
+
+    //     console.log(`the ${x} is ${y} old.`)
+    // //   console.log(`the sum of ${x} and ${y} is : ${x+y}`)
+
+//    function sum(){
+//     total=0;
+//     for(s in sum){
+//         total+=s
+//         return total;
+//     }
+//    }
+//    sum(10,20,30,23,25)
+//    console.log(total)
+
+function sum(...x){
+// var res=0; 
+ const res=x.reduce((a,b)=>a+b,0)
+    // x.forEach( a=>{     
+    // res+=a;
+console.log(res)
+// })
+// console.log(res)
+ }
+sum(10,20,30,40)
+
+// function sum(...x){
+//     // var res=0;
+//     var res=x.reduce((a,b)=>{ 
+//         return a+b },0)
+//     console.log(res)
+// }
+// sum(10,20,30,40)
+// // console.log(sum)
+//  function total(...x){
+//     return x.reduce((a,b)=> a+b ,0) 
+//  }
+// console.log(total(10,20,30,40))
+
+// var sentense=`this 
+// is 
+// a 
+// unclear
+// sentense`;
+// console.log(sentense)
+
+// var fn="Shivakumar"
+// var ln="Reddy"
+// var fulln=`my full name is Mulinti ${fn} ${ln}`
+// console.log(fulln)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Count:<span id="count"></span></h1>
+    <button onclick="btn()">Increment</button>
+    <button onclick="rst()">reset</button>
+    
+    <script>
+        var count= window.localStorage.getItem("count")||0;
+        
+        function btn(){
+            count=Number(count)
+            count +=4;
+        count.innerText=count
+        window.localStorage.setItem("count",count)
+        document.getElementById("count").innerText=count
+        }
+        function rst(){
+            count="";
+              count.innerText=count
+            window.localStorage.setItem("count",count)
+                 document.getElementById("count").innerText=count
+
+        }
+
+
+    // var val=2;
+    // dosomething=()=>{
+    //      val=4
+    //     // console.log(val)
+    // }
+    // dosomething()
+    // console.log(val)
+    </script>
+   
+</body>
+</html>
