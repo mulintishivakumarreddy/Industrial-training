@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="practice-maid-worker.js"></script>
+</head>
+<body>
+    <script>
+        console.log("firstline")
+        // var sum=0
+        // for(var i=0;i<=100000000;i++){
+        //     sum+=i
+        // }
+        // console.log(sum)
+        // console.log("lastline")
+
+        // function sum(a,b){
+        //     var sum=0
+        //     for(var i=a;i<=b;i++){
+        //     sum+=i;
+        //     }
+        //  console.log(sum)
+        // }
+        // function series(){
+        //     var maidworker= new Worker("practice-maid-worker.js")
+        //     maidworker.postMessage(0)
+        //     return new Promise((resolve,reject)=>{
+        //         maidworker.onmessage=(y)=>{
+        //             resolve(y.data)
+        //             console.log("y:",y.data)
+        //         }
+        //     })
+        // }
+        // series().then(function (res){
+        //    console.log("sum :",res)
+        // })
+        // console.log("lastline")
+
+        function series(fn){
+            var maidworker=new Worker("practice-maid-worker.js");
+            maidworker.postMessage(100)
+            maidworker.onmessage=(y)=>{
+                console.log("y:",y.data)
+                fn(y.data)
+            }
+        }
+        series((res)=>{
+        console.log("sum:",res)
+        })
+        console.log("lastline")
+
+    </script>
+</body>
+</html>

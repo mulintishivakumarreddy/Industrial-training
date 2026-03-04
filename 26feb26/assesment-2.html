@@ -1,63 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-  
-</style>
-<body>
-    <table id="table" border="1">
-         
-            <thead>
-            <td>Id</td>  
-            <td>Recipe </td>
-            <td>calories </td>
-            <td>Cooking Time </td>
-            <td>Rating</td>
-            </thead>
-            
-        <tbody id="tbody">
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{
+      border-collapse: collapse;
+      border: 2px solid black;
+    }
+    td,th{
+      border:2px solid black;
+      padding:5px;
+    }
+    img{
+      height:50px;
+      width:50px;
+      
+    }
+  </style>
+ </head>
+ <body>
+  <caption>Assesment On Table</caption>
+  <table id="table">
+  </table>
+  <button onclick="next()" id="btn1">Next</button>
+  <button onclick="previous()" id="btn2">Previous</button>
+ 
+  <script>
+var skip = 0;
+var limit = 5;
+var nextBtn = document.getElementById("btn1");
+var preBtn=document.getElementById("btn2")
+preBtn.style.display="none";
+function fetchdata(){
+fetch(`https://dummyjson.com/recipes?limit=${limit}&skip=${skip}`)
+.then(res=>res.json())
+.then(data=>{ 
+   var table=document.getElementById("table")
+   table.innerHTML=""
+   var theader=document.createElement("tr")
+  theader.innerHTML="<th>Id</th> <th>recipe Name</th><th>Image</th><th>Rating</th><th>Calories</th>"
+  table.appendChild(theader) 
+  data.recipes.forEach(recipe=>{
+  var newrow=document.createElement("tr")
+  var rid=document.createElement("td")
+  rid.innerText=recipe.id
+  var rname=document.createElement("td")
+  rname.innerText=recipe.name;
+  var timage=document.createElement("td")
+  var image=document.createElement("img")
+   timage.appendChild(image)
+  image.src=recipe.image;
+  var rating=document.createElement("td")
+  rating.innerText=recipe.rating;
+  var calories=document.createElement("td")
+  calories.innerText=recipe.caloriesPerServing
+  newrow.appendChild(rid)
+  newrow.appendChild(rname)
+  newrow.appendChild(timage)
+  newrow.appendChild(rating)
+  newrow.appendChild(calories)
+  table.appendChild(newrow)
 
-        </tbody>
-        
-    </table>
-    <script>
-       
-        fetch("https://dummyjson.com/recipes")
-        .then(response=>(response.json()))
-        // .then(data=>(console.log(data)))
-        .then(data=>{
-        var table= document.getElementById("table");
-        var tbody=document.getElementById("tbody")
-        data.recipes.forEach(recipe=>{
-        var newrow=document.createElement("tr")
-        var rid=document.createElement("td")
-        rid.innerText=recipe.id;
-         var name=document.createElement("td")
-         name.innerText=recipe.name;
-         var price=document.createElement("td")
-         price.innerText=recipe.price;
-         var calories=document.createElement("td")
-         calories.innerText=recipe.caloriesPerServing;
-         var CookingTime=document.createElement("td")
-         CookingTime.innerText=recipe.cookTimeMinutes;
-        var rating=document.createElement("td")
-         rating.innerText=recipe.rating;
-            newrow.appendChild(rid)
-            newrow.appendChild(name)
-            newrow.appendChild(calories)
-            newrow.appendChild(CookingTime)
-            newrow.appendChild(rating)
-            tbody.appendChild(newrow)
-            })
-         })
-       
-    </script>
-    
-
-    
-</body>
-</html>
+})
+})
+}
+fetchdata()
+function next(){
+skip=skip+limit;
+if(skip>45){
+  nextBtn.style.display="none";
+}else{
+    nextBtn.style.display="inline";
+}
+  preBtn.style.display="inline";
+fetchdata()
+}
+function previous(){
+  skip=skip-limit;
+  if(skip<=0){
+      preBtn.style.display="none";
+  }
+  else{
+          preBtn.style.display="inline";
+  }
+        nextBtn.style.display="inline";
+fetchdata()
+}
+  </script>
+ </body>
+ </html>
+ 

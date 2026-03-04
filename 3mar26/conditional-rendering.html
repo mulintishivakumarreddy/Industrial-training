@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<style>
+    .even{
+        color:blue;
+    }
+    .odd{
+        color:Red;
+    }
+</style>
+<body>
+    <div id="root"></div>
+  
+
+    <script type="text/babel">
+    
+         var number=+prompt("Enter the Number");
+        // var jsx=<div>{number%2==0?(<h1 style={{color:"red"}}>Even </h1>):<h1 style={{color:"Blue"}}>Odd</h1>}</div>
+        // var jsx=<div>{number%2==0?(<h1 class="even">Even</h1>):<h1 class="odd">ODD</h1>}</div>
+        // var jsx=<h1 class={number%2===0?"even":"odd"}>{number%2==0?"even":"Odd"}</h1>
+        var jsx=<h1 style={number%2==0?{color:"red"}:{color:"blue"}}>{number%2==0?"even":"Odd"}</h1>       
+
+        ReactDOM.render(jsx,document.getElementById("root"))
+        
+
+  
+
+    </script>
+</body>
+</html>
