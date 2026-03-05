@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+</head>
+<body>
+<div id="d1"></div>
+<script type="text/babel">
+    function abc(e){
+    document.getElementById("a1").innerText=e.target.value.toUpperCase();
+//    console.log(text)
+        // console.log(e.clientX)
+        //  console.log(e.clientY)
+        GenUI()
+    }
+    function GenUI(){
+        // var jsx=<div id="mydiv" style={{width:"300px",height:"200px",border:"1px solid black"}} ><h1>Click here to see alert </h1>
+           var jsx=<div> 
+            <input type="text" id="dd" onKeyUp={abc}/>
+           
+            <button >click and see in console</button>
+        <h1 id="a1"></h1></div>
+            ReactDOM.render(jsx,document.getElementById("d1"))
+
+    }
+    GenUI()
+    </script>
+</body>
+
+</html>
