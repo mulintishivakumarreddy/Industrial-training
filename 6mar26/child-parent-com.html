@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+         <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.28.4/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+//         function Parent(){
+//          const[fullname,setF]=React.useState("")
+//          function abc(a){
+//             setF(a)
+//    }
+
+//          return (<div  style={{border:"2px solid red",padding:"20px",margin:"10px"}}>
+//             <h3>Parent Element</h3>
+//             <h2>{fullname}</h2>
+            
+//             <Child iv={abc} />
+            
+//             </div>)
+//         }
+//         function Child(props){
+//             const[s,sets]=React.useState("EMPTY")
+//             return (<div style={{border:"2px solid red",padding:"20px",margin:"10px"}}>
+//                   <h1>Child Element</h1>
+//                   <input onKeyUp={(e)=>{sets(e.target.value)
+//                     props.iv(e.target.value)
+//                   }}/>
+//                   <h4>{s}</h4>
+//                 </div>)
+//         }
+function Parent(){
+    const[fullname,setF]=React.useState("")
+    function abc(a){
+        setF(a)
+    }
+    return(
+        <div>
+            <h1>Parent:</h1>
+            <h3>{fullname}</h3>
+            <Child iv={abc}/></div>
+    )
+        }
+    function Child(props){
+        const[s,sets]=React.useState("EMPTY")
+        return(<div>
+            <h1>Child:</h1>
+            <input onKeyUp={(e)=>{sets(e.target.value) 
+                props.iv(e.target.value)}}/>
+            <h3>{s}</h3>
+            </div>)
+    
+}
+        ReactDOM.render(<Parent/>,document.getElementById("root"))
+
+
+
+    </script>
+    
+</body>
+</html> child to parent ui generating

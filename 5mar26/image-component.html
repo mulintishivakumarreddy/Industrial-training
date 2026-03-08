@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="d1"></div>
+
+<script type="text/babel">
+
+    function GenUI(){
+    var images=[
+    {
+    url:"https://ntvb.tmsimg.com/assets/assets/509523_v9_bb.jpg",
+    likes:0,
+    dislikes:0
+    },
+    {
+    url:"https://upload.wikimedia.org/wikipedia/commons/d/d3/Deepika_Padukone_2025_%281%29.png",
+    likes:0,
+    dislikes:0
+    },
+    {
+    url:"https://th-i.thgim.com/public/incoming/ifvdkf/article69668381.ece/alternates/FREE_1200/Actor%20Deepika%20Padukone%208.jpg",
+    likes:0,
+    dislikes:0
+    }
+    ]
+
+    const [imgs,setimgs] = React.useState(images)
+    const [img,setimg] = React.useState(0)
+
+    function nextimg(){
+    if(img === imgs.length-1){
+    setimg(0)
+    }
+    else{
+    setimg(img+1)
+    }
+    }
+    function previmg(){
+    if(img===0){
+    setimg(imgs.length-1)
+    }
+    else{
+    setimg(img-1)
+    }
+    }
+    function countinc(){
+    var temp=[...imgs]
+    temp[img].likes++
+    setimgs(temp)
+
+    }
+    function countdec(){
+    var temp=[...imgs]
+    temp[img].dislikes++
+    setimgs(temp)
+    
+    }
+
+return(
+
+        <div>
+        <img src={imgs[img].url} style={{height:"200px"}}/>
+        <br/>
+       <button onClick={countinc}>
+        Like : {imgs[img].likes}
+        </button>
+        <br/>
+        <button onClick={countdec}>
+        Dislike : {imgs[img].dislikes}
+        </button>
+        <br/>
+        <button onClick={previmg}>Prev</button>
+        <button onClick={nextimg}>Next</button> 
+        </div>
+        
+      )
+        
+}
+
+ReactDOM.render(<GenUI/>,document.getElementById("d1"))
+
+</script>
+
+</body>
+</html>
